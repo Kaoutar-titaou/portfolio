@@ -1,0 +1,468 @@
+/********** Template CSS **********/
+:root {
+  --primary: #00B87B;
+  --secondary: #314355;
+  --light: #F2F2F2;
+  --dark: #2C3E50;
+}
+
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+  .sticky-lg-top.vh-100 {
+    height: 100% !important;
+  }
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.btn-square {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-sm-square {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-lg-square {
+  width: 50px;
+  height: 50px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.btn-primary {
+  color: #FFFFFF;
+}
+
+.typed-cursor {
+  font-size: 25px;
+  color: var(--light);
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 1;
+  font-size: 30px;
+  right: 30px;
+  bottom: 30px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  color: var(--primary);
+}
+
+.back-to-top i:hover {
+  color: var(--dark);
+}
+
+.back-to-top {
+  -webkit-animation: action 1s infinite alternate;
+  animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+.title {
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  bottom: -4px;
+  left: 0;
+  border: 2px solid var(--light);
+  border-radius: 10px;
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 15px;
+  border-radius: 2px;
+  background: var(--light);
+}
+
+.progress {
+  height: 5px;
+}
+
+.progress .progress-bar {
+  width: 0px;
+  transition: 2s;
+}
+
+.service-item {
+  padding: 30px;
+  text-align: center;
+  background: var(--secondary);
+}
+
+.service-item i {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  color: var(--primary);
+  transition: .5s;
+}
+
+.service-item:hover i {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.portfolio-item .portfolio-btn {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  font-size: 90px;
+  background: rgba(44, 62, 80, .9);
+  opacity: 0;
+  transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+  opacity: 1;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  top: 30px;
+  left: 30px;
+}
+
+.portfolio-item i {
+  opacity: 0;
+  transition: .3s;
+  transition-delay: .3s;
+}
+
+.portfolio-item:hover i {
+  opacity: 1;
+}
+
+.testimonial-carousel .owl-dots {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  background: var(--light);
+}
+
+.testimonial-carousel .owl-dot.active {
+  background: var(--primary);
+}
+/* Ajoute ces styles à la fin de ton fichier CSS */
+
+/* Justification du texte pour la section À propos */
+.about-text {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+}
+
+/* Pour les paragraphes dans la section À propos */
+.about-text p {
+  margin-bottom: 1rem;
+}
+/* ------------------------------------------------------------------- */
+/* --- Styles pour la barre de navigation horizontale en haut à droite --- */
+/* ------------------------------------------------------------------- */
+
+#mainNav {
+    background-color: transparent !important; /* Rendre la barre transparente */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    /* Couleur des liens (ajustez pour qu'elle soit visible sur votre fond sombre) */
+    color: #00B87B !important; 
+    font-weight: 600;
+    margin-left: 1rem; /* Espacement entre les liens */
+    transition: color 0.3s ease;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    /* Couleur au survol (par exemple, le vert de votre portfolio) */
+    color: #4CAF50 !important; 
+}
+
+/* Assurez-vous que le contenu principal est décalé pour ne pas être caché par la barre */
+body {
+    padding-top: 72px; /* Espace pour la barre de navigation */
+}
+@media (max-width: 991.98px) {
+    #mainNav + .content-wrapper {
+        padding-top: 56px; /* Hauteur typique de la barre en mode mobile. Ajustez. */
+    }
+}
+
+/* Retirer le décalage à gauche si vous l'aviez mis pour la barre latérale */
+@media (min-width: 992px) {
+    body {
+        padding-left: 0;
+    }
+}
+
+/* CSS pour le bouton de téléchargement : transparent par défaut, vert au survol (couleur ajustée) */
+.custom-green-btn {
+    /* Rendre le bouton transparent par défaut */
+    background-color: transparent !important; 
+    
+    /* Définir la couleur du texte en blanc (pour qu'il soit visible sur votre fond sombre) */
+    color: #ffffff !important; 
+    
+    /* Retirer la bordure si elle est présente, ou la rendre transparente */
+    border-color: transparent !important; 
+    
+    font-weight: bold;
+    padding: 10px 0; 
+    border-radius: 0 !important; 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Ajouter une transition pour l'effet de survol */
+}
+
+.custom-green-btn:hover {
+    /* Appliquer la couleur verte au survol (couleur extraite du nom "TITAOU KAOUTAR") */
+    background-color: #00B87B !important; /* Vert vif */
+    color: #000000 !important; /* Texte noir au survol pour un meilleur contraste */
+    border-color: #00B87B !important; /* Bordure verte au survol */
+}
+/*
+ * =============================================================
+ * Style FORCÉ pour les boutons de la barre de navigation
+ * =============================================================
+ */
+
+/* Style de base pour chaque bouton (FORCÉ) */
+#mainNav .navbar-nav .nav-item .nav-link {
+    background-color: #2c3e50 !important; /* Fond bleu foncé */
+    border: 2px solid #495766 !important;  /* Bordure subtile */
+    color: #00B87B !important;            /* Texte en blanc */
+
+    /* Autres propriétés */
+    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    margin: 0 5px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Style au survol (hover) et pour l'élément actif (FORCÉ) */
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    border-color: #1abc9c !important; /* Bordure verte/turquoise */
+    background-color: #34495e !important; /* Fond légèrement plus clair */
+}
+
+/* Style pour l'icône à l'intérieur du bouton (FORCÉ) */
+#mainNav .nav-link .fas {
+    font-size: 1.2em !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+}
+/*
+ * ===================================================
+ * Style pour la Section Compétences (Schéma 2: Listes)
+ * ===================================================
+ */
+
+.skill-card-list {
+    background-color: #2c3e50; /* Fond bleu foncé de votre thème */
+    border-radius: 8px;
+    padding: 25px 30px;
+    height: 100%; /* Assure que les cartes sur une même ligne ont la même hauteur */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #495766; /* Bordure subtile */
+    transition: all 0.3s ease;
+}
+
+.skill-card-list:hover {
+    transform: translateY(-5px); /* Effet de lévitation au survol */
+    border-color: #1abc9c; /* Bordure verte au survol */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #495766;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.skill-icon {
+    font-size: 2em; /* Taille de l'icône */
+    color: #1abc9c; /* Couleur verte signature */
+    margin-right: 15px;
+}
+
+.skill-title {
+    color: #ffffff;
+    margin: 0; /* Enlève la marge par défaut du titre */
+    font-size: 1.25em;
+}
+
+.skill-list {
+    list-style: none; /* Enlève les puces par défaut */
+    padding-left: 0;
+    margin-bottom: 0;
+    color: #bdc3c7; /* Couleur de texte légèrement grise pour le contenu */
+}
+
+.skill-list li {
+    padding-left: 1.5em; /* Espace pour la nouvelle puce */
+    position: relative;
+    margin-bottom: 10px; /* Espace entre les items de la liste */
+    font-size: 1em;
+}
+
+/* Création d'une puce personnalisée avec la couleur de votre thème */
+.skill-list li::before {
+    content: '»'; /* Caractère de la puce (peut être '•', '✓', etc.) */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #1abc9c; /* Couleur verte de la puce */
+    font-weight: bold;
+}
+/*
+ * =============================================================
+ * Style CORRIGÉ pour la Section Compétences (Schéma 2: Listes)
+ * =============================================================
+ */
+
+/* NOUVEAU : Conteneur principal de la section pour contrôler la largeur */
+#compétences .container {
+    max-width: 1140px; /* Largeur standard pour les conteneurs Bootstrap. Ajustez si besoin. */
+    margin: 0 auto; /* Centrer le conteneur */
+}
+
+.skill-card-list {
+    background-color: #2c3e50;
+    border-radius: 8px;
+    /* AJUSTEMENT : Moins de padding horizontal */
+    padding: 25px 20px; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #495766;
+    transition: all 0.3s ease;
+}
+
+.skill-card-list:hover {
+    transform: translateY(-5px);
+    border-color: #1abc9c;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #495766;
+    padding-bottom: 15px;
+    margin-bottom: 15px; /* Un peu moins d'espace */
+}
+
+.skill-icon {
+    /* AJUSTEMENT : Icône plus petite */
+    font-size: 1.6em; 
+    color: #1abc9c;
+    margin-right: 12px; /* Un peu moins d'espace */
+}
+
+.skill-title {
+    color: #ffffff;
+    margin: 0;
+    /* AJUSTEMENT : Titre légèrement plus petit pour s'adapter */
+    font-size: 1.1em; 
+}
+
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    color: #bdc3c7;
+}
+
+.skill-list li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 8px; /* Un peu moins d'espace entre les items */
+    /* AJUSTEMENT : Texte de la liste légèrement plus petit */
+    font-size: 0.95em; 
+}
+
+.skill-list li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #1abc9c;
+    font-weight: bold;
+}
